@@ -8,14 +8,14 @@ VM_NAME = corewar
 all:
 	make -C $(ASM_PATH)
 	make -C $(VM_PATH)
-	cp $(ASM_PATH)asm/$(ASM_NAME) .
-	cp $(VM_PATH)$(VM_NAME) .
+	@cp $(ASM_PATH)asm/$(ASM_NAME) .
+	@cp $(VM_PATH)$(VM_NAME) .
 
 clean:
 	make clean -C $(ASM_PATH)
 	make clean -C $(VM_PATH)
-	rm -f $(ASM_NAME)
-	rm -f $(VM_NAME)
+	@rm -f $(ASM_NAME)
+	@rm -f $(VM_NAME)
 
 fclean: clean
 	make fclean -C $(ASM_PATH)
