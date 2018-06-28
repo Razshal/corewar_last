@@ -6,11 +6,12 @@
 /*   By: alecott <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 08:47:46 by alecott           #+#    #+#             */
-/*   Updated: 2017/12/21 08:52:02 by alecott          ###   ########.fr       */
+/*   Updated: 2018/06/28 14:28:06 by alecott          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	ft_len(int nbr)
 {
