@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mfonteni <mfonteni@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zaz <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:43:01 by zaz               #+#    #+#             */
-/*   Updated: 2018/06/28 16:35:07 by mfonteni         ###   ########.fr       */
+/*   Updated: 2018/06/28 12:14:11 by alecott          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ t_op	*ft_search_op(char *str)
 	i = 0;
 	while (i < 17)
 	{
-		if (ft_strequ(g_op_tab[i].name, str))
+		if (ft_strequ(g_op_tab[i].str, str))
 			return (g_op_tab + i);
 		i++;
 	}
