@@ -77,7 +77,7 @@ void		ft_asm(char *str, t_chain *block, t_header *header)
 	str = ft_strjoin(tmp, ".cor");
 	ft_strdel(&tmp);
 	fd = open(str, O_WRONLY | O_TRUNC | O_CREAT,
-S_IROTH | S_IWUSR | S_IRUSR | S_IRGRP);
+	S_IROTH | S_IWUSR | S_IRUSR | S_IRGRP);
 	if (fd < 0)
 		return ;
 	ft_write_cor(fd, header, *start);

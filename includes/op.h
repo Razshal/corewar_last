@@ -43,10 +43,6 @@
 # define NBR_LIVE				21
 # define MAX_CHECKS				10
 
-/*
-** t_op
-*/
-
 typedef struct			s_op
 {
 	char				*str;
@@ -67,10 +63,6 @@ typedef char			t_arg_type;
 # define T_DIR					2
 # define T_IND					4
 # define T_LAB					8
-
-/*
-** prog
-*/
 
 # define PROG_NAME_LENGTH		(128)
 # define COMMENT_LENGTH			(2048)
