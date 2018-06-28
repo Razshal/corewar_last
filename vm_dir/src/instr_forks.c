@@ -17,9 +17,9 @@ int	core_fork(t_instr instr)
 	int i;
 
 	i = -1;
-	add_process(instr.vm, get_address(instr.process->pc +
-	(byte_to_int(instr.vm->map, instr.process->pc + 1, 2) % IDX_MOD)),
-	instr.process->reg[0]);
+	add_process(instr.vm, get_address(instr.process->pc + (byte_to_int(
+		instr.vm->map, instr.process->pc + 1, 2) % IDX_MOD)),
+			instr.process->reg[0]);
 	instr.vm->processes->carry = instr.process->carry;
 	instr.vm->processes->alive = instr.process->alive;
 	instr.vm->processes->color = instr.process->color;
@@ -33,8 +33,9 @@ int	core_lfork(t_instr instr)
 	int i;
 
 	i = -1;
-	add_process(instr.vm, get_address(instr.process->pc +
-	byte_to_int(instr.vm->map, instr.process->pc + 1, 2)),
+	add_process(instr.vm, get_address(
+		instr.process->pc + byte_to_int(
+			instr.vm->map, instr.process->pc + 1, 2)),
 	instr.process->reg[0]);
 	instr.vm->processes->carry = instr.process->carry;
 	instr.vm->processes->alive = instr.process->alive;

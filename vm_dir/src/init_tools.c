@@ -46,8 +46,8 @@ int		check_inputs(void)
 		err = 0;
 	if (PROG_NAME_LENGTH < 1 || COMMENT_LENGTH < 1 || IDX_MOD < 1)
 		err = 0;
-	if (IND_SIZE != 2 || REG_SIZE != 4 || REG_SIZE != 4 ||
-												MAX_PLAYERS > 6)
+	if (IND_SIZE != 2 || REG_SIZE != 4 || REG_SIZE != 4
+										|| MAX_PLAYERS > 6)
 		err = 0;
 	if (!err)
 		ft_dprintf(2, "Invalid values in op.h\n");

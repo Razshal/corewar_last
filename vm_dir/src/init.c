@@ -109,8 +109,8 @@ t_vm		*init_vm(int argc, char **argv)
 	vm->tt_cycle = 1;
 	if (!init_champs(argc, argv, vm))
 		return (free_vm(vm));
-	else if (!(vm->map = (unsigned char *)ft_memalloc(MEM_SIZE)) ||
-	!(vm->colors_map = (char *)ft_memalloc(sizeof(char) * MEM_SIZE)))
+	else if (!(vm->map = (unsigned char *)ft_memalloc(MEM_SIZE))
+	|| !(vm->colors_map = (char *)ft_memalloc(sizeof(char) * MEM_SIZE)))
 	{
 		error_mall(0);
 		return (free_vm(vm));

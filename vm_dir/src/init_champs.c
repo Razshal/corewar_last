@@ -40,8 +40,8 @@ static int		check_champ_ext(char *name)
 	int		len;
 
 	len = ft_strlen(name);
-	if (len > 4 && name[len - 1] == 'r' && name[len - 2] == 'o' &&
-					name[len - 3] == 'c' && name[len - 4] == '.')
+	if (len > 4 && name[len - 1] == 'r' && name[len - 2] == 'o'
+	&& name[len - 3] == 'c' && name[len - 4] == '.')
 		return (1);
 	return (0);
 }
