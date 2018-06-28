@@ -1,8 +1,14 @@
-
-/*
-** Toutes les tailles sont en octets.
-** On part du principe qu'un int fait 32 bits. Est-ce vrai chez vous ?
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   op.h                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mfonteni <mfonteni@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/06/28 18:26:09 by mfonteni          #+#    #+#             */
+/*   Updated: 2018/06/28 18:26:14 by mfonteni         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef OP_H
 # define OP_H
