@@ -73,8 +73,8 @@ int		main(int argc, char **argv)
 	if (argc < 2)
 	{
 		ft_putstr("Usage: ./vm_champs/asm [-a] <sourcefile.s>\n    -a : \
-Instead of creating a .cor file, outputs a stripped and annotated version of \
-the code to the standard output\n");
+		Instead of creating a .cor file, outputs a stripped and \
+		annotated version of the code to the standard output\n");
 		exit(0);
 	}
 	main.getall = NULL;

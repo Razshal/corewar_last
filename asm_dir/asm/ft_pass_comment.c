@@ -20,8 +20,8 @@ void	ft_pass_comment(char *str, int *i)
 			*i = *i + 1;
 		if (!str[*i])
 			break ;
-		if (str[*i + 1] && (str[*i + 1] != COMMENT_CHAR && str[*i + 1] != ';' &&
-str[*i + 1] != '\n'))
+		if (str[*i + 1] && (str[*i + 1] != COMMENT_CHAR && str[*i + 1] != ';'
+		&& str[*i + 1] != '\n'))
 		{
 			*i = *i + 1;
 			return ;

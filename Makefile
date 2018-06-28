@@ -11,6 +11,14 @@ all:
 	@cp $(ASM_PATH)asm/$(ASM_NAME) .
 	@cp $(VM_PATH)$(VM_NAME) .
 
+vm:
+	make -C $(VM_PATH)
+	@cp $(VM_PATH)$(VM_NAME) .
+
+asm:
+	make -C $(ASM_PATH)
+	@cp $(ASM_PATH)asm/$(ASM_NAME) .
+
 clean:
 	make clean -C $(ASM_PATH)
 	make clean -C $(VM_PATH)

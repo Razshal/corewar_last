@@ -24,8 +24,9 @@ static int	ft_pc_label(t_chain block, char *str)
 		if (tmp)
 			ft_strdel(&tmp);
 		n = n + block.size;
-		if (ft_strequ(block.category, "LABEL") &&
-ft_strequ(str, tmp = ft_strndup(block.content, ft_strlen(block.content) - 1)))
+		if (ft_strequ(block.category, "LABEL")
+		&& ft_strequ(str, tmp = ft_strndup(block.content,
+		ft_strlen(block.content) - 1)))
 			break ;
 		block = *block.next;
 	}

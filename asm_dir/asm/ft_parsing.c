@@ -79,8 +79,8 @@ int			ft_get_comment_then_name(t_header *header, char *str, int i)
 	if (j == -1)
 		ft_is_an_error(str, i);
 	i = j + 1;
-	if (str[i] != NAME_CMD_STRING[0] && str[i] != COMMENT_CHAR &&
-			str[i] != ';' && str[i] > 32)
+	if (str[i] != NAME_CMD_STRING[0] && str[i] != COMMENT_CHAR
+	&& str[i] != ';' && str[i] > 32)
 		ft_is_an_error(str, i);
 	while (str[i] <= 32)
 		i++;
@@ -91,8 +91,7 @@ int			ft_get_comment_then_name(t_header *header, char *str, int i)
 	tmp = ft_strnmdup(str, i, i + ft_strlen(NAME_CMD_STRING));
 	if (!ft_strequ(NAME_CMD_STRING, tmp))
 		ft_is_an_error(str, i + ft_strlen(NAME_CMD_STRING));
-	if (!(j = ft_complete_name(str, i + ft_strlen(NAME_CMD_STRING),
-					header)))
+	if (!(j = ft_complete_name(str, i + ft_strlen(NAME_CMD_STRING), header)))
 		ft_is_an_error(str, i);
 	ft_strdel(&tmp);
 	return (j);
@@ -120,7 +119,7 @@ int			ft_get_name_then_comment(t_header *header, char *str, int i)
 	if (!ft_strequ(COMMENT_CMD_STRING, tmp))
 		ft_is_an_error(str, i);
 	if (!(j = ft_complete_comment(str, i + ft_strlen(COMMENT_CMD_STRING),
-					header)))
+	header)))
 		ft_is_an_error(str, i);
 	ft_strdel(&tmp);
 	return (j);

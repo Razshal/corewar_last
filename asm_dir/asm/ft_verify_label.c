@@ -40,8 +40,8 @@ char	*ft_take_the_resy(t_chain *ex)
 	else
 		return (NULL);
 	res = NULL;
-	if (ex->content[0] == ':' ||
-			(ex->content[0] == '%' && ex->content[1] == ':'))
+	if (ex->content[0] == ':'
+	|| (ex->content[0] == '%' && ex->content[1] == ':'))
 	{
 		if (ex->content[0] == ':')
 			res = ft_strnmdup(ex->content, 1, len);
@@ -61,8 +61,8 @@ t_chain	*ft_next(t_chain *block, char *res, int *ok)
 	start = block;
 	while (block)
 	{
-		if (ft_strequ(block->category, "LABEL") &&
-				ft_strequ(block->content, res))
+		if (ft_strequ(block->category, "LABEL")
+		&& ft_strequ(block->content, res))
 		{
 			block = start;
 			*ok = 1;

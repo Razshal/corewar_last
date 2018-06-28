@@ -17,8 +17,8 @@ int		ft_is_lib(char *str, int i)
 	if (str[i] != 'r')
 		return (0);
 	i++;
-	if (ft_isdigit(str[i]) && (ft_isdigit(str[i + 1]) || str[i + 1] == ' ' ||
-str[i + 1] == '\t' || str[i + 1] == SEPARATOR_CHAR))
+	if (ft_isdigit(str[i]) && (ft_isdigit(str[i + 1]) || str[i + 1] == ' '
+	|| str[i + 1] == '\t' || str[i + 1] == SEPARATOR_CHAR))
 		return (1);
 	return (0);
 }

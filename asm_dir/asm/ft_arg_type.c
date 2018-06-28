@@ -51,8 +51,8 @@ static void		ft_arg_size(t_chain *block)
 			else
 				block->size = 4;
 		}
-		else if (ft_strequ(block->category, "LABEL") ||
-				ft_strequ(block->content, "\n"))
+		else if (ft_strequ(block->category, "LABEL")
+		|| ft_strequ(block->content, "\n"))
 			block->size = 0;
 		else
 			block->size = ft_arg_size2(*block, ft_search_op(block->content));

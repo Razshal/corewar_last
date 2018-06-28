@@ -54,8 +54,8 @@ static int	ft_check_if_error(char *str, int *i)
 		if (str[*i - 1] != LABEL_CHAR)
 			ft_is_an_error(str, *i);
 	}
-	if (!ft_strchr(LABEL_CHARS, str[*i]) && str[*i] != DIRECT_CHAR &&
-			str[*i] != LABEL_CHAR && str[*i] != '-')
+	if (!ft_strchr(LABEL_CHARS, str[*i]) && str[*i] != DIRECT_CHAR
+	&& str[*i] != LABEL_CHAR && str[*i] != '-')
 		ft_is_an_error(str, *i);
 	return (1);
 }
@@ -92,8 +92,8 @@ int			ft_complete_content(t_chain *block, char *str, int *i)
 	if (!ft_check_if_error(str, i))
 		return (0);
 	j = *i;
-	while (str[*i] && str[*i] > 32 &&
-			(str[*i] != SEPARATOR_CHAR && str[*i] != ';'))
+	while (str[*i] && str[*i] > 32
+	&& (str[*i] != SEPARATOR_CHAR && str[*i] != ';'))
 		ft_check_if_direct(str, i, &direct, &label);
 	block->content = ft_strnmdup(str, j, *i);
 	block->category = ft_strdup("ARG");
