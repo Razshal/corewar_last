@@ -6,7 +6,7 @@
 /*   By: mfonteni <mfonteni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 17:40:13 by abouvero          #+#    #+#             */
-/*   Updated: 2018/06/28 16:42:39 by mfonteni         ###   ########.fr       */
+/*   Updated: 2018/06/29 12:52:10 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void			get_ocp(unsigned char byte, char *ocp)
 }
 
 static t_param		*decode_param_type(t_param *parameters,
-unsigned char byte, t_instr *instr)
+	unsigned char byte, t_instr *instr)
 {
 	int		i;
 	char	ocp[9];
@@ -65,7 +65,7 @@ void				get_params(t_instr *instr)
 	while (++i < 3 && instr->params[i].type != 0)
 	{
 		instr->params[i].value = byte_to_int(instr->vm->map, cursor,
-		type_to_size(instr->params[i].type, instr->opcode));
+			type_to_size(instr->params[i].type, instr->opcode));
 		cursor += type_to_size(instr->params[i].type, instr->opcode);
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   option.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mfonteni <mfonteni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/30 17:17:57 by abouvero          #+#    #+#             */
-/*   Updated: 2018/06/13 16:50:49 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/06/29 12:53:42 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int			opt(char **av, int ac, int *i, t_vm *vm)
 					return (-2);
 			}
 			else if (is_opt(av[*i], (*i + 1 == ac || !is_dig_neg(av[*i + 1])
-									? 0 : av[*i + 1]), vm, &num) != -1)
+				? 0 : av[*i + 1]), vm, &num) != -1)
 				if (*i + 2 == ac)
 				{
 					!vm->champ ? ft_dprintf(2, "No champ loaded\n") : 0;

@@ -6,7 +6,7 @@
 /*   By: mfonteni <mfonteni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:43:01 by mfonteni          #+#    #+#             */
-/*   Updated: 2018/06/29 12:42:52 by mfonteni         ###   ########.fr       */
+/*   Updated: 2018/06/29 12:51:34 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,9 @@ int		convert_params_unrestrained(t_instr *instr, int limit)
 				instr->params[i].value];
 		}
 		else if (instr->params[i].type == T_IND)
-			instr->params[i].value =
-			byte_to_int(instr->vm->map, get_address((instr->process->pc
-			+ instr->params[i].value)), DIR_SIZE);
+			instr->params[i].value = byte_to_int(
+				instr->vm->map, get_address((instr->process->pc
+					+ instr->params[i].value)), DIR_SIZE);
 	}
 	return (1);
 }

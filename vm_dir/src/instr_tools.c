@@ -6,7 +6,7 @@
 /*   By: mfonteni <mfonteni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 12:36:15 by mfonteni          #+#    #+#             */
-/*   Updated: 2018/06/29 12:29:13 by mfonteni         ###   ########.fr       */
+/*   Updated: 2018/06/29 12:53:16 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	live(t_instr instr)
 	{
 		if (instr.vm && instr.vm->champ && !instr.vm->visu)
 			ft_printf("Une instruction live en faveur du joueur %d a echoue\n",
-			byte_to_int(instr.vm->map, instr.process->pc + 1, 4));
+				byte_to_int(instr.vm->map, instr.process->pc + 1, 4));
 		return (decal_pc(instr, 5, 0));
 	}
 	thischamp->lives++;
@@ -52,10 +52,10 @@ int	aff(t_instr instr)
 
 	get_params(&instr);
 	if (!compare_params(instr.params, instr.opcode)
-	|| !valid_reg(--instr.params[0].value))
+		|| !valid_reg(--instr.params[0].value))
 		return (free_params(instr, 0));
 	if ((champ = get_champ_by_num(instr.vm->champ,
-	instr.process->reg[0])))
+		instr.process->reg[0])))
 		ft_printf("Champion %s says : %c\n", champ->name,
 			instr.process->reg[instr.params[0].value]);
 	else
