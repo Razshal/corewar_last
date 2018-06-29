@@ -6,7 +6,7 @@
 /*   By: mfonteni <mfonteni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 12:36:15 by mfonteni          #+#    #+#             */
-/*   Updated: 2018/06/28 15:25:54 by mfonteni         ###   ########.fr       */
+/*   Updated: 2018/06/29 12:29:13 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,27 @@ int	zjmp(t_instr instr)
 {
 	if (instr.process->carry == 0)
 		return (decal_pc(instr, 3, 0));
-	instr.process->pc = get_address(instr.process->pc +
-		byte_to_int(instr.vm->map, instr.process->pc + 1, 2) % IDX_MOD);
+	instr.process->pc = get_address(
+		instr.process->pc + byte_to_int(
+			instr.vm->map, instr.process->pc + 1, 2) % IDX_MOD);
 	instr.process->cycles_left = -1;
 	return (decal_pc(instr, 0, 1));
 }
 
 int	aff(t_instr instr)
 {
+	t_champ *champ;
+
 	get_params(&instr);
 	if (!compare_params(instr.params, instr.opcode)
-	|| !valid_reg(--instr.params[0].value)
-	|| !get_champ_by_num(instr.vm->champ, instr.process->reg[1]))
+	|| !valid_reg(--instr.params[0].value))
 		return (free_params(instr, 0));
+	if ((champ = get_champ_by_num(instr.vm->champ,
+	instr.process->reg[0])))
+		ft_printf("Champion %s says : %c\n", champ->name,
+			instr.process->reg[instr.params[0].value]);
+	else
+		ft_printf("%c\n", instr.params[0].value);
 	return (free_params(instr, 1));
 }
 
