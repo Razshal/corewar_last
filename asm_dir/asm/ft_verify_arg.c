@@ -6,7 +6,7 @@
 /*   By: rkrief <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 15:57:47 by rkrief            #+#    #+#             */
-/*   Updated: 2018/06/28 11:58:34 by rkrief           ###   ########.fr       */
+/*   Updated: 2018/06/29 11:47:58 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,6 @@ void	ft_verify_arg(t_chain *block)
 	}
 	while (i < 16)
 		ft_strdel(&arg->tab[i++]);
-	ft_memdel((void**)arg->tab);
-	ft_memdel((void**)arg);
+	ft_memdel((void**)&arg->tab);
+	ft_memdel((void**)&arg);
 }
