@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_line_in_bloc.c                              :+:      :+:    :+:   */
+/*   ft_verify_arg.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkrief <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mfonteni <mfonteni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 15:57:47 by rkrief            #+#    #+#             */
-/*   Updated: 2018/06/29 11:47:58 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/06/29 12:35:22 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/asm.h"
 
 /*
- **	1 = DIRECT
- **	2 = INDIRECT
- **	3 = REGISTRE
- */
+** 1 = DIRECT
+** 2 = INDIRECT
+** 3 = REGISTRE
+*/
 
 int		ft_take_nb_arg(t_chain block)
 {
@@ -67,8 +67,8 @@ int		ft_search(char type, int nb_arg, int nb_tab, char **tab)
 	}
 	while (tab[nb_tab][i] != ';' && tab[nb_tab][i] != ',')
 	{
-		if (type == tab[nb_tab][i]){
-			return(1);}
+		if (type == tab[nb_tab][i])
+			return (1);
 		i++;
 	}
 	return (0);
@@ -97,7 +97,7 @@ void	ft_check_nb_arg(t_arg *arg, t_chain *block)
 void	ft_verify_arg(t_chain *block)
 {
 	t_arg	*arg;
-	int 	i;
+	int		i;
 
 	i = 0;
 	arg = ft_memalloc(sizeof(t_arg));
