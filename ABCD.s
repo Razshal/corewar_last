@@ -40,13 +40,6 @@ fork3:
 fork4:
 	zjmp	%:start_fork
 
-loop:
-	ld		%-500, r10
-	ld		%-10, r3
-	sti		r10, %:jump, %1
-	and		r1, %0, r1
-	fork	%:start 
-
 end:
 	sti		r4, r10, r5
 
