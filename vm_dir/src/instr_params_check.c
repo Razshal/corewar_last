@@ -6,7 +6,7 @@
 /*   By: mfonteni <mfonteni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:43:01 by mfonteni          #+#    #+#             */
-/*   Updated: 2018/06/29 12:51:34 by mfonteni         ###   ########.fr       */
+/*   Updated: 2018/06/29 15:16:23 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		compare_params(t_param *params, int opcode)
 	while (++i < 3)
 	{
 		if (g_op_tab[opcode].args[i]
-		&& !((params[i].type & g_op_tab[opcode].args[i])))
+			&& !((params[i].type & g_op_tab[opcode].args[i])))
 			return (0);
 		else if (!g_op_tab[opcode].args[i])
 			params[i].type = 0;

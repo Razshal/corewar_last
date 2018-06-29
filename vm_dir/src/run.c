@@ -6,7 +6,7 @@
 /*   By: mfonteni <mfonteni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 11:22:38 by abouvero          #+#    #+#             */
-/*   Updated: 2018/06/28 16:41:49 by mfonteni         ###   ########.fr       */
+/*   Updated: 2018/06/29 15:21:51 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int			mem_dump(unsigned char *map)
 	return (1);
 }
 
-static void	check_vm(t_vm *vm, int *check)
+static int	check_vm(t_vm *vm, int *check)
 {
 	t_champ *ch;
 
@@ -92,6 +92,7 @@ static void	check_vm(t_vm *vm, int *check)
 		ch->lives = 0;
 		ch = ch->next;
 	}
+	return (vm->processes_nbr ? 1 : 0);
 }
 
 int			run(t_vm *vm)
@@ -106,8 +107,8 @@ int			run(t_vm *vm)
 	vm->ctd = CYCLE_TO_DIE;
 	while (vm->processes_nbr && vm->ctd > 0)
 	{
-		if (vm->cycle == vm->ctd)
-			check_vm(vm, &check);
+		if (vm->cycle == vm->ctd && !check_vm(vm, &check))
+			return (vm->visu ? free_visu(visu, vm) : 1);
 		exec_process(vm->processes, vm);
 		vm->visu ? visu_run(*vm, visu->win, visu, visu->score) : 0;
 		if (vm->tt_cycle == vm->dump)
