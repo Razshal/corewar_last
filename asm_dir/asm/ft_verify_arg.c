@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_line_in_bloc.c                              :+:      :+:    :+:   */
+/*   ft_verify_arg.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkrief <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 15:57:47 by rkrief            #+#    #+#             */
-/*   Updated: 2018/06/29 11:47:58 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/06/29 14:05:04 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ void	ft_init_type(t_chain *block)
 		if (ft_strequ(block->category, "ARG"))
 		{
 			if (block->content[0] == 'r')
-				block->type = "3";
+				block->type = '3';
 			else if (block->content[0] == DIRECT_CHAR)
-				block->type = "1";
+				block->type = '1';
 			else if (ft_isdigit(block->content[0]) ||
-					block->content[0] == LABEL_CHAR)
-				block->type = "2";
+					block->content[0] == LABEL_CHAR || block->content[0] == '-')
+				block->type = '2';
 		}
 		block = block->next;
 	}
@@ -85,8 +85,8 @@ void	ft_check_nb_arg(t_arg *arg, t_chain *block)
 		block = block->next;
 		while (ft_strequ(block->category, "ARG"))
 		{
-			if (!ft_search(block->type[0], arg->pro, arg->op_c_nb, arg->tab))
-				ft_arg_error(arg->pro, block->type[0], arg->op_c_nb);
+			if (!ft_search(block->type, arg->pro, arg->op_c_nb, arg->tab))
+				ft_arg_error(arg->pro, block->type, arg->op_c_nb);
 			block = block->next;
 			arg->pro++;
 		}
