@@ -6,13 +6,13 @@
 /*   By: mfonteni <mfonteni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 12:36:15 by mfonteni          #+#    #+#             */
-/*   Updated: 2018/06/29 12:56:08 by mfonteni         ###   ########.fr       */
+/*   Updated: 2018/06/29 13:00:56 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/corewar.h"
 
-int	live(t_instr instr)
+int		live(t_instr instr)
 {
 	t_champ *thischamp;
 
@@ -35,7 +35,7 @@ int	live(t_instr instr)
 	return (decal_pc(instr, 5, 1));
 }
 
-int	zjmp(t_instr instr)
+int		zjmp(t_instr instr)
 {
 	if (instr.process->carry == 0)
 		return (decal_pc(instr, 3, 0));
@@ -46,7 +46,7 @@ int	zjmp(t_instr instr)
 	return (decal_pc(instr, 0, 1));
 }
 
-int	aff(t_instr instr)
+int		aff(t_instr instr)
 {
 	t_champ *champ;
 
@@ -63,7 +63,7 @@ int	aff(t_instr instr)
 	return (free_params(instr, 1));
 }
 
-int	decal_pc(t_instr instr, int decal, int ret)
+int		decal_pc(t_instr instr, int decal, int ret)
 {
 	instr.process->pc = (instr.process->pc + decal) % MEM_SIZE;
 	instr.process->cycles_left = -1;

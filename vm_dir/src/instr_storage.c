@@ -6,7 +6,7 @@
 /*   By: mfonteni <mfonteni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/26 15:10:07 by mfonteni          #+#    #+#             */
-/*   Updated: 2018/06/29 12:52:54 by mfonteni         ###   ########.fr       */
+/*   Updated: 2018/06/29 13:02:29 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ int	sti(t_instr instr)
 		|| !convert_params_start(&instr, 1, 3))
 		return (free_params(instr, 0));
 	int_to_bytes(instr.process->reg[instr.params[0].value],
-	get_address(instr.process->pc +
-	((instr.params[1].value + instr.params[2].value) % IDX_MOD)),
+	get_address(instr.process->pc + (
+		(instr.params[1].value + instr.params[2].value) % IDX_MOD)),
 		instr.vm->map, instr);
 	return (free_params(instr, 1));
 }
