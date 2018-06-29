@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arg_type.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alecott <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mfonteni <mfonteni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 13:34:51 by alecott           #+#    #+#             */
-/*   Updated: 2018/06/28 12:59:47 by alecott          ###   ########.fr       */
+/*   Updated: 2018/06/29 13:10:31 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static void		ft_arg_size(t_chain *block)
 				block->size = 4;
 		}
 		else if (ft_strequ(block->category, "LABEL")
-		|| ft_strequ(block->content, "\n"))
+			|| ft_strequ(block->content, "\n"))
 			block->size = 0;
 		else
 			block->size = ft_arg_size2(*block, ft_search_op(block->content));

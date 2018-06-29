@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_verify_label.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mfonteni <mfonteni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 16:52:40 by rkrief            #+#    #+#             */
-/*   Updated: 2018/06/29 11:59:48 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/06/29 13:10:53 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_take_the_resy(t_chain *ex)
 		return (NULL);
 	res = NULL;
 	if (ex->content[0] == ':'
-	|| (ex->content[0] == '%' && ex->content[1] == ':'))
+		|| (ex->content[0] == '%' && ex->content[1] == ':'))
 	{
 		if (ex->content[0] == ':')
 			res = ft_strnmdup(ex->content, 1, len);
@@ -63,7 +63,7 @@ t_chain	*ft_next(t_chain *block, char *res, int *ok)
 	while (block)
 	{
 		if (ft_strequ(block->category, "LABEL")
-		&& ft_strequ(block->content, res))
+			&& ft_strequ(block->content, res))
 		{
 			block = start;
 			*ok = 1;

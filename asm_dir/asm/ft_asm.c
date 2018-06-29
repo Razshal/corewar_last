@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_asm.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alecott <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mfonteni <mfonteni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/23 10:05:05 by alecott           #+#    #+#             */
-/*   Updated: 2018/06/28 12:58:04 by alecott          ###   ########.fr       */
+/*   Updated: 2018/06/29 13:09:48 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ static void	ft_write_arg(t_chain block, t_chain start, int fd)
 	str = NULL;
 	if (block.arg_type == REG_CODE)
 		str = ft_strnmdup(block.content, 1, ft_strlen(block.content));
-	else if (block.arg_type == DIR_CODE && (ft_isdigit(block.content[1]) ||
-				block.content[1] == '-'))
+	else if (block.arg_type == DIR_CODE && (ft_isdigit(block.content[1])
+		|| block.content[1] == '-'))
 		str = ft_strsub(block.content, 1, ft_strlen(block.content));
-	else if (block.arg_type == IND_CODE && (ft_isdigit(block.content[0]) ||
-				block.content[0] == '-'))
+	else if (block.arg_type == IND_CODE && (ft_isdigit(block.content[0])
+		|| block.content[0] == '-'))
 		str = ft_strdup(block.content);
 	else if ((block.arg_type == DIR_CODE && block.content[1] == LABEL_CHAR)
 		|| (block.arg_type == IND_CODE && block.content[0] == LABEL_CHAR))

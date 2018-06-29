@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_checkbegin.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkrief <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mfonteni <mfonteni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/28 15:07:04 by rkrief            #+#    #+#             */
-/*   Updated: 2018/06/28 16:21:48 by rkrief           ###   ########.fr       */
+/*   Updated: 2018/06/29 13:10:23 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_checkbegin(char *str, int *i)
 	if (!str || !str[*i] || !ft_isascii(str[*i]))
 		ft_is_an_error(str, *i);
 	while (str[*i] == ' ' || str[*i] == '\t' || str[*i] == '\n'
-	|| str[*i] == COMMENT_CHAR || str[*i] == ';')
+		|| str[*i] == COMMENT_CHAR || str[*i] == ';')
 	{
 		if (str[*i] == COMMENT_CHAR || str[*i] == ';')
 			ft_pass_comment(str, i);
