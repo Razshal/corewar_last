@@ -22,8 +22,9 @@ void	ft_is_not_ok(int ok, char *res, int i, char *str)
 {
 	if (!ok)
 	{
-		ft_putstr("Sorry but the label you put doesn't exist\n");
-		ft_putendl(res);
+		ft_putstr("No such label ");
+		ft_putstr(res);
+		ft_putendl(" while attempting to dereference token");
 		ft_strdel(&res);
 		ft_is_an_error(str, i);
 	}

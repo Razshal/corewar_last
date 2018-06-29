@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS = -Wall -Werror -Wextra -g 
+CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address
 
 LIB_PATH = ./libft/
 
@@ -52,8 +52,8 @@ ALL_LIB_SRCS = ft_atoi.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_memset.c \
 ALL_ASM_SRCS = ft_verify_label.c op.c ft_get_in_chain.c ft_is_an_error.c \
 			   ft_parsing.c ft_pass_comment.c main.c ft_asm.c ft_complete_content.c \
 			   ft_put_line_in_block.c ft_arg_type.c ft_ocp.c ft_putint_bin.c \
-			   ft_write_cor.c ft_pass_space.c ft_nbr_link.c ft_find_label.c ft_is_lib.c \
-			   ft_checkbegin.c \
+			   ft_write_cor.c ft_arg_error.c ft_init_tab.c ft_pass_space.c ft_nbr_link.c ft_find_label.c ft_is_lib.c \
+			   ft_checkbegin.c ft_verify_arg.c\
 
 ALL_CWR_SRCS = 
 
