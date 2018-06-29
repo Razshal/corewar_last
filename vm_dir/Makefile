@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+         #
+#    By: mfonteni <mfonteni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/25 17:38:12 by abouvero          #+#    #+#              #
-#    Updated: 2018/06/28 15:17:57 by abouvero         ###   ########.fr        #
+#    Updated: 2018/06/29 12:56:37 by mfonteni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,6 @@ SRC_NAME = main.c \
 	   instr_operators.c \
 	   instr_storage.c \
 	   instr_forks.c \
-	   getters.c \
 	   convert.c \
 	   instr_params_check.c \
 	   init_visu.c \

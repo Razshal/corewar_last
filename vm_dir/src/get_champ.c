@@ -6,7 +6,7 @@
 /*   By: mfonteni <mfonteni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 10:35:19 by abouvero          #+#    #+#             */
-/*   Updated: 2018/06/28 16:15:18 by mfonteni         ###   ########.fr       */
+/*   Updated: 2018/06/29 12:55:46 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,11 +91,12 @@ t_champ			*parse_champ(char *file_name, t_champ *champ)
 	if (champ->size > CHAMP_MAX_SIZE)
 	{
 		ft_dprintf(2, "File \"%s\" is too large : %d bytes instead of \
-%d bytes.\n", file_name, champ->size, CHAMP_MAX_SIZE);
+			%d bytes.\n", file_name, champ->size, CHAMP_MAX_SIZE);
 		return (rec_free_champs(champ));
 	}
-	if (!(champ->code = (unsigned char *)ft_memalloc(sizeof(char) * \
-			champ->size)) || read(fd, champ->code, champ->size) != champ->size)
+	if (!(champ->code = (unsigned char *)ft_memalloc(
+		sizeof(char) * champ->size)) || read(
+			fd, champ->code, champ->size) != champ->size)
 		return (error_file("Invalid header in \"%s\"\n", file_name, champ));
 	if (close(fd))
 		return (error_file("Couldn't close file \"%s\"\n", file_name, champ));

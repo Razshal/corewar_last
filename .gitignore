@@ -17,3 +17,4 @@ visu/__pycache__
 .DS_Store
 .vscode
 resources/*
+getters.c
