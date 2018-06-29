@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/17 14:53:02 by alecott           #+#    #+#             */
-/*   Updated: 2018/06/29 14:05:13 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/06/29 14:21:13 by rkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int					main(int argc, char **argv);
 void				ft_pass_comment(char *str, int *i);
 t_chain				*ft_parsing(char *str, t_header *header, char *str2);
 void				ft_is_an_error(char *str, int i);
-void				ft_verify_arg(t_chain *block);
+void				ft_verify_arg(t_chain *block, char *str);
 t_chain				*ft_get_in_chain(char *str, int j);
 int					ft_complete_content(t_chain *block, char *str, int *i);
 int					ft_checkbegin(char *str, int *i);

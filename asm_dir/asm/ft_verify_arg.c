@@ -6,7 +6,7 @@
 /*   By: mfonteni <mfonteni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 15:57:47 by rkrief            #+#    #+#             */
-/*   Updated: 2018/06/29 14:11:37 by mfonteni         ###   ########.fr       */
+/*   Updated: 2018/06/29 14:21:39 by rkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,12 +94,14 @@ void	ft_check_nb_arg(t_arg *arg, t_chain *block)
 	}
 }
 
-void	ft_verify_arg(t_chain *block)
+void	ft_verify_arg(t_chain *block, char *str)
 {
 	t_arg	*arg;
+	t_chain *start;
 	int		i;
 
 	i = 0;
+	start = block;
 	arg = ft_memalloc(sizeof(t_arg));
 	arg->pro = 1;
 	arg->tab = ft_init_tab();
@@ -111,6 +113,8 @@ void	ft_verify_arg(t_chain *block)
 	}
 	while (i < 16)
 		ft_strdel(&arg->tab[i++]);
+	block = start;
 	ft_memdel((void**)&arg->tab);
 	ft_memdel((void**)&arg);
+	ft_verify_label(str, block);
 }
