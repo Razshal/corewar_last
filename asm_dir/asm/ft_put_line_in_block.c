@@ -6,7 +6,7 @@
 /*   By: mfonteni <mfonteni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 15:57:47 by rkrief            #+#    #+#             */
-/*   Updated: 2018/06/28 19:07:05 by mfonteni         ###   ########.fr       */
+/*   Updated: 2018/06/29 14:12:22 by rkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,9 +100,6 @@ int		ft_put_line_in_block(t_chain *b, int *i, char *str)
 	int clone;
 
 	nb_arg = ft_take_instruction_and_nb_arg(str, i, b);
-	if ((b->nb_op_tab == 2 || b->nb_op_tab == 3 || b->nb_op_tab == 4
-	|| b->nb_op_tab == 15 || b->nb_op_tab == 10) && !ft_is_lib(str, *i))
-		ft_is_an_error(str, *i);
 	if (!(b->next = ft_memalloc(sizeof(t_chain))))
 		exit(0);
 	b = b->next;
