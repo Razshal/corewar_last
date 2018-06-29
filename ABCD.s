@@ -4,9 +4,15 @@
 begin:
 	st		r1, r2
 	st		r16, :begin
+	sti		r2, %:start_fork, %1
 	sti		r2, %:fork1, %1
 	sti		r2, %:fork2, %1
 	ld		%10, r3
+	ld		%500, r10
+	and		r1, %0, r1
+
+start_fork:
+	live	%0
 	and		r1, %0, r1
 	fork	%:fork2
 
@@ -15,7 +21,6 @@ fork1:
 	fork	%:fork3
 	ld		%190055427, r4
 	ld		%0, r5
-	and		r1, %0, r1
 	zjmp	%:end
 
 fork2:
@@ -33,7 +38,17 @@ fork3:
 	zjmp	%:end
 
 fork4:
-	zjmp	%:begin
+	zjmp	%:start_fork
+
+loop:
+	ld		%-500, r10
+	ld		%-10, r3
+	sti		r10, %:jump, %1
+	and		r1, %0, r1
+	fork	%:start 
 
 end:
-	sti		r4, r3, r5
+	sti		r4, r10, r5
+
+jump:
+	zjmp	%495
