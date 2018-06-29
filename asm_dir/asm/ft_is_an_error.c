@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_an_error.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkrief <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/15 17:07:56 by rkrief            #+#    #+#             */
-/*   Updated: 2018/05/30 11:17:15 by alecott          ###   ########.fr       */
+/*   Updated: 2018/06/29 11:58:30 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ void	ft_is_an_error(char *str, int i)
 		col++;
 	}
 	col--;
-	ft_putstr("Error line ");
-	ft_putnbr(nb_line);
-	ft_putstr(" column ");
-	ft_putnbr(col);
-	ft_putchar('\n');
+	ft_putstr_fd("Error line ", 2);
+	ft_putnbr_fd(nb_line, 2);
+	ft_putstr_fd(" column ", 2);
+	ft_putnbr_fd(col, 2);
+	ft_putchar_fd('\n', 2);
 	exit(0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkrief <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/14 18:35:51 by rkrief            #+#    #+#             */
-/*   Updated: 2018/06/28 16:23:50 by rkrief           ###   ########.fr       */
+/*   Updated: 2018/06/29 12:00:27 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ void	ft_check_error_parse(int *fd, int *i, char **argv)
 		exit(0);
 	if (read(*fd, 0, 0) < 0 && !argv[*i + 1])
 	{
-		ft_putstr("Can't read source file ");
-		ft_putendl(argv[*i]);
+		ft_putstr_fd("Can't read source file ", 2);
+		ft_putendl_fd(argv[*i], 2);
 		exit(0);
 	}
 	*i = *i + 1;

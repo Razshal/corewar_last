@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_line_in_bloc.c                              :+:      :+:    :+:   */
+/*   ft_arg_error.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkrief <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 15:57:47 by rkrief            #+#    #+#             */
-/*   Updated: 2018/06/28 11:58:34 by rkrief           ###   ########.fr       */
+/*   Updated: 2018/06/29 11:56:30 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ void	ft_arg_error(int nb_param, char type, int instr)
 	else
 		res = "register";
 	ins = g_op_tab[instr].str;
-	ft_putstr("Invalid parameter ");
-	ft_putnbr(nb_param - 1);
-	ft_putstr(" type ");
-	ft_putstr(res);
-	ft_putstr(" for instruction ");
-	ft_putendl(ins);
+	ft_putstr_fd("Invalid parameter ", 2);
+	ft_putnbr_fd(nb_param - 1, 2);
+	ft_putstr_fd(" type ", 2);
+	ft_putstr_fd(res, 2);
+	ft_putstr_fd(" for instruction ", 2);
+	ft_putendl_fd(ins, 2);
 	exit(0);
 }

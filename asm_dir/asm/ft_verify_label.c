@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_verify_label.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkrief <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 16:52:40 by rkrief            #+#    #+#             */
-/*   Updated: 2018/06/28 15:32:06 by rkrief           ###   ########.fr       */
+/*   Updated: 2018/06/29 11:59:48 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	ft_is_not_ok(int ok, char *res, int i, char *str)
 {
 	if (!ok)
 	{
-		ft_putstr("No such label ");
-		ft_putstr(res);
-		ft_putendl(" while attempting to dereference token");
+		ft_putstr_fd("No such label ", 2);
+		ft_putstr_fd(res, 2);
+		ft_putendl_fd(" while attempting to dereference token", 2);
 		ft_strdel(&res);
 		ft_is_an_error(str, i);
 	}
