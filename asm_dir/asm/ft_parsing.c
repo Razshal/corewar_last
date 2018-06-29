@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/14 16:05:57 by rkrief            #+#    #+#             */
-/*   Updated: 2018/06/29 12:01:22 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/06/29 14:05:16 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,7 @@ t_chain		*ft_parsing(char *str, t_header *header, char *str2)
 	int		i;
 	int		j;
 	t_chain	*block;
+	t_chain	*ex;
 	char	*t;
 	char	*tp;
 
@@ -146,8 +147,9 @@ t_chain		*ft_parsing(char *str, t_header *header, char *str2)
 	else
 		ft_is_an_error(str, i);
 	block = ft_get_in_chain(str, j);
+	ex = block;
+	ft_verify_arg(ex);
 	ft_verify_label(str, block);
-	ft_verify_arg(block);
 	ft_nbr_link(block);
 	ft_asm(str2, block, header);
 	ft_strdel(&t);
